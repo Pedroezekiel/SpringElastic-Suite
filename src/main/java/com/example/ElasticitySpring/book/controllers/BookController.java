@@ -81,4 +81,9 @@ public class BookController {
     public List<Book> searchByRatingRate(@RequestParam double min, @RequestParam double max) {
         return bookStoreServices.searchByRatingRate(min, max);
     }
+
+    @GetMapping("/all")
+    public List<Book> getAllBooks() {
+        return bookStoreServices.getAllBooks();
+    }
 }
