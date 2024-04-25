@@ -41,14 +41,14 @@ public interface BookRepository extends ElasticsearchRepository<Book, String> {
       {
         "match_phrase": {
             "synopsis": {
-                "query": "?0"
+                "query": "?0",
                 "slop": 2
             }
-        },
+        }
+      },
         "highlight": {
           "fields": {
                "synopsis": {}
-          }
         }
       }
     """)
@@ -97,5 +97,13 @@ public interface BookRepository extends ElasticsearchRepository<Book, String> {
             }
           """)
     List<Book> searchByAmazonRating_range(double min, double max);
+
+    @Query(value = """
+      {
+        "match_all": {}
+      }
+    """
+    )
+    List<Book> findAllBooks();
 }
 
