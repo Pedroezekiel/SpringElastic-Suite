@@ -83,6 +83,11 @@ public class BookStoreServicesImpl  implements BookStoreServices {
         return bookRepository.searchByAmazonRating_range(min, max);
     }
 
+    @Override
+    public List<Book> getAllBooks() {
+        return bookRepository.findAllBooks();
+    }
+
 
 
 
