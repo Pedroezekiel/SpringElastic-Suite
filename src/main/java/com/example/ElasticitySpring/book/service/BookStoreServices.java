@@ -30,4 +30,6 @@ public interface BookStoreServices{
     List<Book> searchByEdition(int edition);
 
     List<Book> searchByRatingRate(double min, double max);
+
+    List<Book> getAllBooks();
 }
